@@ -51,9 +51,9 @@ module.exports = {
     {
       resolve: `gatsby-source-sanity`,
       options: {
-        projectId: process.env.RS_SANITY_PROJECTID,
-        dataset: process.env.RS_SANITY_DATASET,
-        token: process.env.RS_SANITY_TOKEN,
+        projectId: `97bpcflt`,
+        dataset: `production`,
+        token: `skoSfz1i62D7DEEO0es1q457F6XhfTNBNh7qEazGbcCqKwcbecbGtLGDmmL9bNH4tGUO8xiu81WsPWPloO2X6YIB4nvV8v4sNpGnmgYTGXY00MnAEbqhhE1yvB1YE7W0VNThFzYBou5D8KJ8gTVm7H1DwrT2IgGJeG7Ri2WTYDOVRT1t1zZx`,
         graphqlTag: "default",
       },
     },

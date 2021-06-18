@@ -13,17 +13,35 @@ function Hero(props) {
 
   const herobannerbutton = props.herobannerbutton
   let animationContainer = createRef()
+  let anim = null;
+
 
   useEffect(() => {
-    const anim = lottie.loadAnimation({
+    anim = lottie.loadAnimation({
       container: animationContainer.current,
       renderer: "svg",
       loop: true,
       autoplay: true,
       animationData: heroAnimation,
     })
-    return () => anim.destroy() // optional clean up for unmounting
+    handleStart()
+    return () => {
+      anim.destroy()
+    }
+   
   }, [])
+
+
+
+ function handleStart() {
+    anim = lottie.loadAnimation({
+      container: animationContainer.current,
+      renderer: 'html',
+      loop: true,
+      autoplay: true,
+      animationData: heroAnimation,
+    })
+  }
 
   return (
     <section class="max-w-6xl px-4 md:px-3 sm:my-20 md:mt-10 md:mb-40 mx-auto relative gradiant-layer banner-section">
@@ -81,13 +99,13 @@ function Hero(props) {
               
             </Helmet> */}
             {/* <Image props={props.herobannerimage.asset._ref} classes="w-full" /> */}
-            {/* <div className="w-full" ref={animationContainer} /> */}
+            <div className="w-full"  ref={animationContainer} />
             {/* <div dangerouslySetInnerHTML={{ __html: myHTML }} /> */}
 
             {/*<div className="lotti-body" id="lottie"></div>*/}
-            <div className="w-full">
-              <StaticImage src="../images/RubberStack_MAIN-3D_1-1_active_00000.png" alt="RudderStack animation" placeholder="tracedSVG" />
-            </div>
+            {/* <div className="w-full">
+             
+            </div> */}
           </div>
         </div>
       </div>
